@@ -1,0 +1,23 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "challenges#  |  Link\r ---------|--------\r  array-revers   | [Link 1]()\r  2   | [Link 2]()",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms#readme",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}

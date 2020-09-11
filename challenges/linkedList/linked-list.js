@@ -28,7 +28,7 @@ class LinkedList {
     includes(val){
         let current = this.head;
         while(current) { 
-            if(val === current.value){
+            if(current.value === val){
                 return true;
             }
             current = current.next;
@@ -40,10 +40,10 @@ class LinkedList {
         let current = this.head;
         let resultString = '';
         while(current){
-            resultString += current.value + '->';
+            resultString += `{${current.value}} -> `;
             current = current.next;
         }
-        return resultString + 'Null' ;
+        return resultString + 'NULL' ;
     }
 }
 

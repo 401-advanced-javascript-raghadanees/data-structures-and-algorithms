@@ -25,10 +25,65 @@ class LinkedList {
         return this;
     }
 
-    includes(val){
+    append(value) {
+        let node = new Node(value);
+        if (!this.head) {
+            this.head = node;
+            return this;
+        }
+        let currentNode = this.head;
+        while (currentNode.next) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = node;
+        return this;
+    }
+
+    insertBefore(value, newVal) {
+        let newNode = new Node(newVal);
+
+        let currentNode = this.head;
+
+        if (currentNode.value === value) {
+            newNode.next = this.head;
+            this.head = newNode;
+            return this;
+        }
+        while (currentNode.next) {
+            if (currentNode.next.value === value) {
+                newNode.next = currentNode.next;
+                currentNode.next = newNode;
+                return this;
+            }
+
+            currentNode = currentNode.next;
+        }
+        return this;
+
+    }
+
+    insertAfter(value, newVal) {
+        let newNode = new Node(newVal);
+
+        let currentNode = this.head;
+        while (currentNode) {
+            if (currentNode.value === value) {
+                newNode.next = currentNode.next;
+                currentNode.next = newNode;
+               
+                return this;
+            }
+            currentNode = currentNode.next;
+        }
+        return this;
+
+
+    }
+
+    includes(val) {
         let current = this.head;
-        while(current) { 
-            if(current.value === val){
+        while (current) {
+            if (current.value === val) {
                 return true;
             }
             current = current.next;
@@ -36,14 +91,14 @@ class LinkedList {
         return false;
     }
 
-    toString(){
+    toString() {
         let current = this.head;
         let resultString = '';
-        while(current){
+        while (current) {
             resultString += `{${current.value}} -> `;
             current = current.next;
         }
-        return resultString + 'NULL' ;
+        return resultString + 'NULL';
     }
 }
 

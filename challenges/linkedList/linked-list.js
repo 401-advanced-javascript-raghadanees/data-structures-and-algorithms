@@ -100,6 +100,31 @@ class LinkedList {
         }
         return resultString + 'NULL';
     }
+
+    kthFromEnd(k) {
+        if (typeof k != 'number') { 
+            throw Error('K is not number'); 
+        }
+
+
+        let count = 0;
+        let current = this.head;
+        
+        while (current) {
+            count++;
+            current = current.next;
+        }
+        
+        
+        current = this.head;
+        let index = (count - k) - 1;
+        
+        for (let i = 0; i < index; i++) {
+            current = current.next;
+        }
+        
+        return current.value;
+    }
 }
 
 module.exports = LinkedList;

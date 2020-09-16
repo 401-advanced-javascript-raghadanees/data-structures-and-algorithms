@@ -105,8 +105,12 @@ class LinkedList {
         if (typeof k != 'number') { 
             throw Error('K is not number'); 
         }
+        if ( k < 0) { 
+            throw Error('K must be positive'); 
+        }
 
 
+/// first we find the no. of node in ll 
         let count = 0;
         let current = this.head;
         
@@ -114,7 +118,9 @@ class LinkedList {
             count++;
             current = current.next;
         }
-        
+        if ( k >= count) { 
+            throw Error(`k must be less than ${count} `); 
+        }
         
         current = this.head;
         let index = (count - k) - 1;

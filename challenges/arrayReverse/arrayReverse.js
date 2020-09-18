@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
 function reverseArray(arr){
   var outputArr = [];
   for (var i = arr.length - 1; i> -1; i--){
-      outputArr.push(arr[i]);
+    outputArr.push(arr[i]);
   }
 
   return outputArr;

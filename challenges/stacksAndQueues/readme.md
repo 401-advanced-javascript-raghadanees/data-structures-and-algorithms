@@ -24,4 +24,4 @@ Implementation of a Stack and a Queue with linked lists.
 
 
 ## solution
-![Image](../../assets/stack&queue.jpg)
+![Image](/assets/stack&queue.jpg)

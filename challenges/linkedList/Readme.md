@@ -29,3 +29,8 @@ Creating Singly Linked List in javascript and implement insertion, checking valu
 - represent all linked list value as string
 
 `linkedList.toString(); value } -> { value } -> { value } -> NULL"`
+
+## solution
+![Image](/assets/insert.jpg)
+![Image](/assets/include.jpg)
+![Image](/assets/tostring.jpg)

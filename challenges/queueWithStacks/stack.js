@@ -44,61 +44,21 @@ class Stack {
     }
 
   }
-  
-
-}
-
-class PseudoQueue {
-    constructor() {
-        this.inputStack = new Stack();
-        this.outputStack = new Stack();
-        this.size=0;
-
-    }
-
-
-    enqueue(val) {
-        this.inputStack.push(val);
-        this.size++;
-    }
-
-
-    dequeue() {
-        let current = this.inputStack.top;
-        while (current) {
-            this.outputStack.push(current.value);
-            current = current.next;
-        }
-
-        this.outputStack.pop();
-         this.size--;
-        this.inputStack = new Stack();
-
-        current = this.outputStack.top;
-
-        while (current) {
-            this.inputStack.push(current.value);
-            current = current.next;
-        }
-
-        this.outputStack = new Stack();
-    }
+  isEmpty() {
+    return this.length === 0;
+  }
 
 
 }
+//  test
+// let st = new Stack();
+//  st.push(1);
+// st.push(2);
+// st.push(3);
+// console.log(st)
 
-// let q = new PseudoQueue();
-// q.enqueue(1);
-// q.enqueue(2);
-// q.enqueue(3);
+// console.log(st.isEmpty());
+//  st.pop()
+// console.log(st)
 
-// console.log('q : ', q);
-// q.dequeue();
-// q.dequeue();
-// q.dequeue();
-
-// console.log('q : ', q);
-
-
-
-module.exports = PseudoQueue;
+// console.log(st.peek());

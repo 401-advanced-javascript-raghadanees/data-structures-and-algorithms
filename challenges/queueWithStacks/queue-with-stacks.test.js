@@ -4,31 +4,33 @@ const PseudoQueue = require('./queue-with-stacks.js');
 
 describe(' PseudoQueue Module ', () => {
 
-  it('enqueue() , Add an item at the end of the PseudoQueue ', () => {
+  it('enqueue()...................  ', () => {
 
-    let test = new PseudoQueue();
-    expect(test.stackArray_1.length).toEqual(0);
-    expect(test.stackArray_2.length).toEqual(0);
-    test.enqueue(1);
-    test.enqueue(2);
-    test.enqueue(3);
-    console.log('test enqueue : ', test);
-    expect(test.stackArray_1).toEqual([1,2,3]);
-  });
+    let testQ = new PseudoQueue();
+    expect(testQ.inputStack.length).toEqual(0);
+    expect(testQ.outputStack.length).toEqual(0);
+    testQ.enqueue(1);
+    testQ.enqueue(2);
+    testQ.enqueue(3);
+    console.log('testQ enqueue : ', testQ);
+    
+     expect([testQ.inputStack.top.value,testQ.inputStack.top.next.value,testQ.inputStack.top.next.next.value]).toEqual([3,2,1]);
+ });
 
-  it('dequeue() , remove an item at the end of the stackArray_1 then add it to stackArray_2  ', () => {
+  it('dequeue() ,,,,,,,,,,,, ', () => {
 
-    let test = new PseudoQueue();
-    expect(test.stackArray_1.length).toEqual(0);
-    expect(test.stackArray_2.length).toEqual(0);
-    test.enqueue(1);
-    test.enqueue(2);
-    test.enqueue(3);
-    expect(test.stackArray_1).toEqual([1,2,3]);
-    test.dequeue();
-    console.log('test dequeue : ', test);
-    expect(test.stackArray_1).toEqual([1,2]);
-    expect(test.stackArray_2).toEqual([3]);
+    let testQ = new PseudoQueue();
+    expect(testQ.inputStack.length).toEqual(0);
+    expect(testQ.outputStack.length).toEqual(0);
+    testQ.enqueue(1);
+    testQ.enqueue(2);
+    testQ.enqueue(3);
+    expect([testQ.inputStack.top.value,testQ.inputStack.top.next.value,testQ.inputStack.top.next.next.value]).toEqual([3,2,1]);
+    testQ.dequeue();
+    console.log('testQ dequeue : ', testQ);
+    expect([testQ.inputStack.top.value,testQ.inputStack.top.next.value]).toEqual([3,2]);
+    // expect(testQ.outputStack).toEqual([1]);
   });
 
 });
+

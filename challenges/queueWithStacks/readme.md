@@ -1,5 +1,5 @@
 ## Challenge Summary
-make pseudoqueue class that implemment queue on stack
+make pseudoqueue class that implemment queue on 2 stacks
 
 ## Challenge Description
 this PseudoQueue class will implement our standard queue interface (the two methods listed below), but will internally only utilize 2 Stack objects. Ensure that you create your class with the following methods:
@@ -10,3 +10,5 @@ Approach & Efficiency
 use predfiend stack to apply queue concept of first in first out
 
 Solution
+
+![Image](/assets/cc11.jpg)

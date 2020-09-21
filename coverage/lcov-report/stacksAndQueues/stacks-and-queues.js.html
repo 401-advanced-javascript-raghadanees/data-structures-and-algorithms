@@ -356,52 +356,52 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
 class Node {
-    constructor(value) {
-        this.value = value;
-        this.next = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
 // stack LIFO &gt;&gt; last in first out
 class Stack {
-    constructor() {
-        this.top = null;
-        this.length = 0;
+  constructor() {
+    this.top = null;
+    this.length = 0;
 &nbsp;
-    }
-    //  adds a new node with a value to the top of the stack
-    push(val) {
-        let node = new Node(val);
-        node.next = this.top;  /// الترتيب مهم اول شي مننقل قيمة التوب وبعدا منضيف النود 
-        this.top = node;
-        this.length++;
-    }
+  }
+  //  adds a new node with a value to the top of the stack
+  push(val) {
+    let node = new Node(val);
+    node.next = this.top;  /// الترتيب مهم اول شي مننقل قيمة التوب وبعدا منضيف النود 
+    this.top = node;
+    this.length++;
+  }
 &nbsp;
 &nbsp;
-    // pop removes the node from the top of the stack, and returns the node’s value.
-    pop() {
-        let newTop = this.top;
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (this.top) {
-            let val = newTop.value;
-            newTop = newTop.next;
-            this.top = newTop;
-            this.length--;
-            return val;
-        } else {
-<span class="cstat-no" title="statement not covered" >            throw new RangeError('Empty!! Can not pop');</span>
-        }
+  // pop removes the node from the top of the stack, and returns the node’s value.
+  pop() {
+    let newTop = this.top;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.top) {
+      let val = newTop.value;
+      newTop = newTop.next;
+      this.top = newTop;
+      this.length--;
+      return val;
+    } else {
+<span class="cstat-no" title="statement not covered" >      throw new RangeError('Empty!! Can not pop');</span>
     }
-    // peek returns the value of the node located on top of the stack, without removing it from the stack.
-    peek() {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (this.top) {
-            return this.top.value;
-        } else {
-<span class="cstat-no" title="statement not covered" >            throw new RangeError('Empty!! Can not peek');</span>
-        }
+  }
+  // peek returns the value of the node located on top of the stack, without removing it from the stack.
+  peek() {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.top) {
+      return this.top.value;
+    } else {
+<span class="cstat-no" title="statement not covered" >      throw new RangeError('Empty!! Can not peek');</span>
+    }
 &nbsp;
-    }
-    isEmpty() {
-        return this.length === 0;
-    }
+  }
+  isEmpty() {
+    return this.length === 0;
+  }
 &nbsp;
 &nbsp;
 }
@@ -421,53 +421,53 @@ class Stack {
 &nbsp;
 &nbsp;
 class Queue {
-    constructor() {
-        this.front = null;
-        this.length = 0
+  constructor() {
+    this.front = null;
+    this.length = 0;
+  }
+  //Push data in the queue
+  enqueue(val) {
+    let node = new Node(val);
+    let current;
+    if (this.front === null) { ///!this.front
+      this.front = node;
+    } else {
+      current = this.front;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = node;
     }
-    //Push data in the queue
-    enqueue(val) {
-        let node = new Node(val);
-        let current;
-        if (this.front === null) { ///!this.front
-            this.front = node;
-        } else {
-            current = this.front;
-            while (current.next) {
-                current = current.next;
-            }
-            current.next = node;
-        }
-        this.length++;
+    this.length++;
+  }
+&nbsp;
+  dequeue() {
+    //let current = this.front;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.front) {
+<span class="cstat-no" title="statement not covered" >      throw new Error('Empty Queue can not dequeue');</span>
     }
-&nbsp;
-    dequeue() {
-        //let current = this.front;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.front) {
-<span class="cstat-no" title="statement not covered" >            throw new Error('Empty Queue can not dequeue');</span>
-        }
-        else {
-            let val = this.front.value;
-            this.front = this.front.next;
-            this.length--;
-            return val;
-        }
-&nbsp;
+    else {
+      let val = this.front.value;
+      this.front = this.front.next;
+      this.length--;
+      return val;
     }
 &nbsp;
-    peek() {
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.front) {
-<span class="cstat-no" title="statement not covered" >            throw new Error('Empty Queue can not');</span>
-        }
-        else {
-            return this.front.value;
+  }
 &nbsp;
-        }
+  peek() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.front) {
+<span class="cstat-no" title="statement not covered" >      throw new Error('Empty Queue can not');</span>
     }
+    else {
+      return this.front.value;
 &nbsp;
-    isEmpty() {
-        return this.length === 0;
     }
+  }
+&nbsp;
+  isEmpty() {
+    return this.length === 0;
+  }
     
 //   isEmpty(){
 //     if(!this.front){
@@ -508,7 +508,7 @@ module.exports = { Node, Stack, Queue };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Sep 19 2020 00:20:07 GMT+0300 (Eastern European Summer Time)
+                at Mon Sep 21 2020 07:53:25 GMT+0300 (Eastern European Summer Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

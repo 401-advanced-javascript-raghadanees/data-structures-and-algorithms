@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.22% </span>
+                <span class="strong">70.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>52/72</span>
+                <span class='fraction'>47/67</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.11% </span>
+                <span class="strong">56.25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/18</span>
+                <span class='fraction'>9/16</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.24% </span>
+                <span class="strong">71.21% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>52/71</span>
+                <span class='fraction'>47/66</span>
             </div>
         
             
@@ -183,17 +183,7 @@
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
 <a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a>
-<a name='L128'></a><a href='#L128'>128</a>
-<a name='L129'></a><a href='#L129'>129</a>
-<a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a>
-<a name='L135'></a><a href='#L135'>135</a>
-<a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -205,19 +195,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -334,134 +314,124 @@
 let Node = require('./node.js');
 &nbsp;
 class LinkedList {
-    constructor() {
-        this.head = null;
+  constructor() {
+    this.head = null;
+  }
+&nbsp;
+&nbsp;
+  insert(value) {
+    let node = new Node(value); // value: value, next: null
+    node.next = this.head; // I start with the head always
+      this.head = node;
+      return this;
+  }
+&nbsp;
+  append(value) {
+    let node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      return this;
     }
+    let currentNode = this.head;
+    while (currentNode.next) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = node;
+    return this;
+  }
 &nbsp;
+  insertBefore(value, newVal) {
+    let newNode = new Node(newVal);
 &nbsp;
-    insert(value) {
-        let node = new Node(value); // value: value, next: null
-        // what if this linked list is empty?
-        if (!this.head) { // !null =&gt; true : if I dont have head  ,,, same as this.head === null
-            this.head = node;
-            return this;
-        }
-        // if we have other stuff, I need to add it at the end
-        // I have to loop through all nodes and add it to the tail
-        let currentNode = this.head; // I start with the head always
-        while (currentNode.next) {
-            currentNode = currentNode.next;
-        }
-        currentNode.next = node;
+    let currentNode = this.head;
+&nbsp;
+    if (currentNode.value === value) {
+      newNode.next = this.head;
+      this.head = newNode;
+      return this;
+    }
+    while (currentNode.next) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (currentNode.next.value === value) {
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
         return this;
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      currentNode = currentNode.next;</span>
     }
+<span class="cstat-no" title="statement not covered" >    return this;</span>
 &nbsp;
-    append(value) {
-        let node = new Node(value);
-        if (!this.head) {
-            this.head = node;
-            return this;
-        }
-        let currentNode = this.head;
-        while (currentNode.next) {
-            currentNode = currentNode.next;
-        }
-        currentNode.next = node;
-        return this;
-    }
+  }
 &nbsp;
-    insertBefore(value, newVal) {
-        let newNode = new Node(newVal);
+  insertAfter(value, newVal) {
+    let newNode = new Node(newVal);
 &nbsp;
-        let currentNode = this.head;
-&nbsp;
-        if (currentNode.value === value) {
-            newNode.next = this.head;
-            this.head = newNode;
-            return this;
-        }
-        while (currentNode.next) {
-            <span class="missing-if-branch" title="else path not taken" >E</span>if (currentNode.next.value === value) {
-                newNode.next = currentNode.next;
-                currentNode.next = newNode;
-                return this;
-            }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >            currentNode = currentNode.next;</span>
-        }
-<span class="cstat-no" title="statement not covered" >        return this;</span>
-&nbsp;
-    }
-&nbsp;
-    insertAfter(value, newVal) {
-        let newNode = new Node(newVal);
-&nbsp;
-        let currentNode = this.head;
-        while (currentNode) {
-            if (currentNode.value === value) {
-                newNode.next = currentNode.next;
-                currentNode.next = newNode;
+    let currentNode = this.head;
+    while (currentNode) {
+      if (currentNode.value === value) {
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
                
-                return this;
-            }
-            currentNode = currentNode.next;
-        }
-<span class="cstat-no" title="statement not covered" >        return this;</span>
+        return this;
+      }
+      currentNode = currentNode.next;
+    }
+<span class="cstat-no" title="statement not covered" >    return this;</span>
 &nbsp;
 &nbsp;
+  }
+&nbsp;
+  includes(val) {
+    let current = this.head;
+    while (current) {
+      if (current.value === val) {
+        return true;
+      }
+      current = current.next;
+    }
+    return false;
+  }
+&nbsp;
+  toString() {
+    let current = this.head;
+    let resultString = '';
+    while (current) {
+      resultString += `{${current.value}} -&gt; `;
+      current = current.next;
+    }
+    return resultString + 'NULL';
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  kt</span>hFromEnd(k) {
+<span class="cstat-no" title="statement not covered" >    if (typeof k != 'number') { </span>
+<span class="cstat-no" title="statement not covered" >      throw Error('K is not number'); </span>
+    }
+<span class="cstat-no" title="statement not covered" >    if ( k &lt; 0) { </span>
+<span class="cstat-no" title="statement not covered" >      throw Error('K must be positive'); </span>
     }
 &nbsp;
-    includes(val) {
-        let current = this.head;
-        while (current) {
-            if (current.value === val) {
-                return true;
-            }
-            current = current.next;
-        }
-        return false;
+&nbsp;
+    /// first we find the no. of node in ll 
+    let count = <span class="cstat-no" title="statement not covered" >0;</span>
+    let current = <span class="cstat-no" title="statement not covered" >this.head;</span>
+        
+<span class="cstat-no" title="statement not covered" >    while (current) {</span>
+<span class="cstat-no" title="statement not covered" >      count++;</span>
+<span class="cstat-no" title="statement not covered" >      current = current.next;</span>
     }
-&nbsp;
-    toString() {
-        let current = this.head;
-        let resultString = '';
-        while (current) {
-            resultString += `{${current.value}} -&gt; `;
-            current = current.next;
-        }
-        return resultString + 'NULL';
+<span class="cstat-no" title="statement not covered" >    if ( k &gt;= count) { </span>
+<span class="cstat-no" title="statement not covered" >      throw Error(`k must be less than ${count} `); </span>
     }
-&nbsp;
-<span class="fstat-no" title="function not covered" >    kt</span>hFromEnd(k) {
-<span class="cstat-no" title="statement not covered" >        if (typeof k != 'number') { </span>
-<span class="cstat-no" title="statement not covered" >            throw Error('K is not number'); </span>
-        }
-<span class="cstat-no" title="statement not covered" >        if ( k &lt; 0) { </span>
-<span class="cstat-no" title="statement not covered" >            throw Error('K must be positive'); </span>
-        }
-&nbsp;
-&nbsp;
-/// first we find the no. of node in ll 
-        let count = <span class="cstat-no" title="statement not covered" >0;</span>
-        let current = <span class="cstat-no" title="statement not covered" >this.head;</span>
         
-<span class="cstat-no" title="statement not covered" >        while (current) {</span>
-<span class="cstat-no" title="statement not covered" >            count++;</span>
-<span class="cstat-no" title="statement not covered" >            current = current.next;</span>
-        }
-<span class="cstat-no" title="statement not covered" >        if ( k &gt;= count) { </span>
-<span class="cstat-no" title="statement not covered" >            throw Error(`k must be less than ${count} `); </span>
-        }
+<span class="cstat-no" title="statement not covered" >    current = this.head;</span>
+    let index = <span class="cstat-no" title="statement not covered" >(count - k) - 1;</span>
         
-<span class="cstat-no" title="statement not covered" >        current = this.head;</span>
-        let index = <span class="cstat-no" title="statement not covered" >(count - k) - 1;</span>
-        
-<span class="cstat-no" title="statement not covered" >        for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; index; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            current = current.next;</span>
-        }
-        
-<span class="cstat-no" title="statement not covered" >        return current.value;</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; index; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      current = current.next;</span>
     }
+        
+<span class="cstat-no" title="statement not covered" >    return current.value;</span>
+  }
 }
 &nbsp;
 module.exports = LinkedList;
@@ -472,7 +442,7 @@ module.exports = LinkedList;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Sep 19 2020 00:20:07 GMT+0300 (Eastern European Summer Time)
+                at Mon Sep 21 2020 07:53:25 GMT+0300 (Eastern European Summer Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

@@ -17,9 +17,9 @@ describe('Linked-list Modules', () => {
 
     let newValue = 'Second Value';
     list.insert(newValue);
-    expect(list.head.value).toEqual(initialValue);
+    expect(list.head.value).toEqual(newValue);
     expect(list.head.next).not.toBeNull();
-    expect(list.head.next.value).toEqual(newValue);
+    expect(list.head.next.value).toEqual(initialValue);
 
     console.log('list -----> ', list);
   });
@@ -38,10 +38,10 @@ describe('Linked-list Modules', () => {
 
   it('toString()', () => {
     let list = new LinkedList();
-    list.insert('Hi');
+    list.insert('Raghad');
     list.insert('I am');
-    list.insert(23);
-    expect(list.toString()).toEqual('{Hi} -> {I am} -> {23} -> NULL');
+    list.insert('Hi');
+    expect(list.toString()).toEqual('{Hi} -> {I am} -> {Raghad} -> NULL');
   });
 
   it('append()', () => {

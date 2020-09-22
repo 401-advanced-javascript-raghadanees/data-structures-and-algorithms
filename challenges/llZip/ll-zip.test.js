@@ -7,7 +7,7 @@ describe('Zip List ..........', () => {
   it(' zip two lists of the same length', () => {
     const linkedList1 = createList1();
     const linkedList = createList2();
-    expect(zipList(linkedList1, linkedList).toString()).toBe('{1} -> {11} -> {2} -> {12} -> {3} -> {13} -> {4} -> {14} -> NULL');
+    expect(zipList(linkedList1, linkedList).toString()).toBe('{4} -> {14} -> {3} -> {13} -> {2} -> {12} -> {1} -> {11} -> NULL');
   });
 
 

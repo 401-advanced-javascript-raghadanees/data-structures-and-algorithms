@@ -4,7 +4,8 @@
   "description": "challenges#  |  Link\r ---------|--------\r  array-revers   | [Link 1]()\r  2   | [Link 2]()",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage",
+    "lint": "eslint '**/*.js'"
   },
   "repository": {
     "type": "git",

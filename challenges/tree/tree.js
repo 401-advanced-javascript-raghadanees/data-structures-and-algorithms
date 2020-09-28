@@ -13,7 +13,28 @@ class BinaryTree {
   constructor(){ 
     this.root = null;
   }
+//////////////  ---------- cc 16-------Find the Maximum Value in a Binary Tree
+  findMaximumValue(){
+    if(this.root === null)
+       return null;
+    let max = 0;
+    findMaxHelper(this.root);
+    function findMaxHelper (root){
+      if (root.value > max) 
+         max = root.value;
+      if(root.left !== null){
+        findMaxHelper(root.left);
+      }
 
+      if(root.right !== null){
+        findMaxHelper(root.right);
+      }
+    }; 
+    
+    return max;
+  } 
+
+//////////////  ---------- cc 15
   preOrder(){
     // /////////////////// root -> left -> right 
     if(this.root == null){

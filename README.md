@@ -6,13 +6,13 @@ challenges#     |  Link
 
  shiftArr       | [Link 2](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/array-shift)
 
- BinaryArr      | [Link 2](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/pull/3)
+ BinaryArr      | [Link 3](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/pull/3)
 
-  linked list   | [Link 2](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/master/challenges/linkedList)
+  linked list   | [Link 4](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/master/challenges/linkedList)
 
-zipLL           | [Link 2](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/master/challenges/llZip)
+zipLL           | [Link 5](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/master/challenges/llZip)
 
-stack & queue   | [Link 2](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/master/challenges/stacksAndQueues)
+stack & queue   | [Link 6](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/master/challenges/stacksAndQueues)
 
 
 

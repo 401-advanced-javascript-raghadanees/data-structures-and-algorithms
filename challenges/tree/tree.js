@@ -13,6 +13,32 @@ class BinaryTree {
   constructor(){ 
     this.root = null;
   }
+//////////////  ---------- cc 17-------takes a Binary Tree as its unique input...traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+BreadthFirstTraversal() {
+  if(this.root === null){
+    return 'Empty tree';
+  }
+let visited = [];// list of visited nodes
+let  queue = [];//a basic queue for keeping track of which nodes we need to look at .
+let currentNode = this.root;
+
+queue.push(currentNode);
+
+while (queue.length>0) {
+  //console.log('queue.length:',queue.length);
+  currentNode = queue.shift();
+  visited.push(currentNode.value);
+  //console.log('currentNode node:',currentNode.value);
+  //console.log('visetedNodevalue:',visited);
+  if (currentNode.left) 
+      queue.push(currentNode.left);
+  if (currentNode.right) 
+     queue.push(currentNode.right);
+};
+
+  return visited;
+} 
+
 //////////////  ---------- cc 16-------Find the Maximum Value in a Binary Tree
   findMaximumValue(){
     if(this.root === null)

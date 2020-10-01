@@ -133,7 +133,20 @@ describe('binary Search tree', () => {
     expect(BST.contains(33)).toEqual(false);
   });
   
-         
+  // it('findMaximumValue', () => {
+  //   var Bst = new BinarySearchTree();
+  //   let expected = 5;
+  //   let preOrderOutput = Bst.findMaximumValue();
+  //   expect(preOrderOutput).toEqual(expected);
+
+  // });
+
+  // it('findMaximumValue if it is empty ', () => {
+  //   var Bst = new BinarySearchTree();
+  //   let preOrderOutput = Bst.findMaximumValue();
+  //   expect(preOrderOutput).toEqual('empty tree');
+
+  // });     
   
 });
 //   describe('binary tree......', () => {

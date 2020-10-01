@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1601586425820" clover="3.2.0">
-  <project timestamp="1601586425821" name="All files">
+<coverage generated="1601587973400" clover="3.2.0">
+  <project timestamp="1601587973401" name="All files">
     <metrics statements="290" coveredstatements="215" conditionals="110" coveredconditionals="64" methods="50" coveredmethods="39" elements="450" coveredelements="318" complexity="0" loc="290" ncloc="290" packages="6" files="8" classes="8"/>
     <package name="arrayShift">
       <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
@@ -267,7 +267,7 @@
         <line num="86" count="0" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
-        <line num="96" count="8" type="stmt"/>
+        <line num="96" count="9" type="stmt"/>
         <line num="101" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="102" count="1" type="stmt"/>
         <line num="104" count="1" type="stmt"/>

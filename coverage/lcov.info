@@ -378,7 +378,7 @@ FNDA:0,(anonymous_5)
 FNDA:0,traversalInOrder
 FNDA:0,(anonymous_7)
 FNDA:0,traversalPostOrder
-FNDA:8,(anonymous_9)
+FNDA:9,(anonymous_9)
 FNDA:2,(anonymous_10)
 FNDA:10,traversal
 FNDA:2,(anonymous_12)
@@ -434,7 +434,7 @@ DA:84,0
 DA:86,0
 DA:88,0
 DA:89,0
-DA:96,8
+DA:96,9
 DA:101,2
 DA:102,1
 DA:104,1

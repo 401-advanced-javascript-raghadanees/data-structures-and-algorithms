@@ -11,3 +11,7 @@ Create a Node class that has properties for the value stored in the node, the le
 ![Image](/assets/cc15-1.jpg)
 ![Image](/assets/cc15-2.jpg)
 ![Image](/assets/cc15-3.jpg)
+
+instance method called find-maximum-value. return the maximum value stored in the tree. 
+
+![Image](/assets/cc16.jpg)

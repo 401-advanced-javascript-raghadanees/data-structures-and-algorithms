@@ -11,8 +11,8 @@ class LinkedList {
   insert(value) {
     let node = new Node(value); // value: value, next: null
     node.next = this.head; // I start with the head always
-      this.head = node;
-      return this;
+    this.head = node;
+    return this;
   }
 
   append(value) {

@@ -1,44 +1,78 @@
-'use strict';
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.previous = null;
+  }
+}
 
-class AnimalShelter{
-  constructor(){
-    this.catArr = new Array();// or this.catArr = [];
-    this.dogArr = new Array();
+
+
+class AnimalShelter {
+  constructor() {
+    this.front = null;
+    this.rare = null;
+    this.length = 0;
   }
 
-  
-  enqueue(anim){
-   
-    if( anim.type === 'cat' )
-      {
-        this.catArr.push(anim);
-        console.log('this cat : ', anim);
+  enqueue(value) {
+    if (value === 'cat' || value === 'dog') {
+      let newNode = new Node(value);
+      if (this.front) { // if not empty 
+        this.rare = newNode;
+        this.front.previous = this.rare;
+
+      } else {
+        this.front = newNode;
+        this.rare = newNode;
+
       }
-      
-    else if( anim.type === 'dog' ){
-      this.dogArr.push(anim);
-    }
-    else {
-      return 'Not valid'; 
-    }
-    console.log('cats : ', this.catArr);
-  } 
-
-  // remove item from the front of the queue 
-  dequeue(pref){
-    console.log('AnimalShelter dequeue ');
-    if(pref.type === 'cat'){
-      let cat = this.catArr.shift();
-      return cat;
-    } else if(pref.type === 'dog'){
-      let dog = this.dogArr.shift();
-      return dog;
+      this.length++;
+      return this;
     } else {
-      return null;
+      return `allowed only dogs and cats`;
     }
-  } 
+  }
 
-} 
+  isEmpty() {
+    return this.length > 0 ? false : true;
+  }
+  dequeue(value) {
+    if (value === 'cat' || value === 'dog') {
+
+      if (this.isEmpty()) {
+        throw new RangeError('quee is empty');
+      }
+      if (value === 'cat' && this.front.value !== 'cat') {
+        return `the first animal is not cat`;
+      }
+      if (value === 'dog' && this.front.value !== 'dog') {
+        return `the first animal is not dog`;
+      }
+      // console.log('****', this.front);
+      if (!this.front.previous) { // if the node after the front is empty delete the front and rare
+        let deleteValue = this.front.value;
+        this.front = null;
+        this.rare = null;
+        return deleteValue;
+      }
+      let deleteValue = this.front.value;
+      this.front = this.front.previous;
+      this.length--;
+      return deleteValue;
+    } else {
+      return `allowed only dogs and cats`;
+    }
+
+  }
+}
+
+const animalObj = new AnimalShelter();
+// animalObj.enqueue('dog');
+animalObj.enqueue('cat');
+// animalObj.dequeue('aa');
+console.log('>>>>>>>>', animalObj.dequeue('cat'));
+console.log('caaaat', animalObj);
+
 
 module.exports = AnimalShelter;
 

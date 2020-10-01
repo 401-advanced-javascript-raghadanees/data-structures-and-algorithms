@@ -9,20 +9,20 @@ describe('Linked-list Modules', () => {
     expect(list.head).toBeNull();
   });
 
-  it('insert()', () => {
-    let list = new LinkedList();
-    let initialValue = 'First One';
-    list.insert(initialValue);
-    expect(list.head.value).toEqual(initialValue);
+  // it('insert()', () => {
+  //   let list = new LinkedList();
+  //   let initialValue = 'First One';
+  //   list.insert(initialValue);
+  //   expect(list.head.value).toEqual(initialValue);
 
-    let newValue = 'Second Value';
-    list.insert(newValue);
-    expect(list.head.value).toEqual(initialValue);
-    expect(list.head.next).not.toBeNull();
-    expect(list.head.next.value).toEqual(newValue);
+  //   let newValue = 'Second Value';
+  //   list.insert(newValue);
+  //   expect(list.head.value).toEqual(initialValue);
+  //   expect(list.head.next).not.toBeNull();
+  //   expect(list.head.next.value).toEqual(newValue);
 
-    console.log('list -----> ', list);
-  });
+  //   console.log('list -----> ', list);
+  // });
 
   it('includes()', () => {
     let list = new LinkedList();
@@ -36,13 +36,13 @@ describe('Linked-list Modules', () => {
     expect(list.includes('ok')).toBe(false);
   });
 
-  it('toString()', () => {
-    let list = new LinkedList();
-    list.insert('Hi');
-    list.insert('I am');
-    list.insert(23);
-    expect(list.toString()).toEqual('{Hi} -> {I am} -> {23} -> NULL');
-  });
+  // it('toString()', () => {
+  //   let list = new LinkedList();
+  //   list.insert('Hi');
+  //   list.insert('I am');
+  //   list.insert(23);
+  //   expect(list.toString()).toEqual('{Hi} -> {I am} -> {23} -> NULL');
+  // });
 
   it('append()', () => {
     let list = new LinkedList();

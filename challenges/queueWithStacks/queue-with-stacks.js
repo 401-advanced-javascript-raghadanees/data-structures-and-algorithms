@@ -49,40 +49,40 @@ class Stack {
 }
 
 class PseudoQueue {
-    constructor() {
-        this.inputStack = new Stack();
-        this.outputStack = new Stack();
-        this.size=0;
+  constructor() {
+    this.inputStack = new Stack();
+    this.outputStack = new Stack();
+    this.size=0;
 
+  }
+
+
+  enqueue(val) {
+    this.inputStack.push(val);
+    this.size++;
+  }
+
+
+  dequeue() {
+    let current = this.inputStack.top;
+    while (current) {
+      this.outputStack.push(current.value);
+      current = current.next;
     }
 
+    this.outputStack.pop();
+    this.size--;
+    this.inputStack = new Stack();
 
-    enqueue(val) {
-        this.inputStack.push(val);
-        this.size++;
+    current = this.outputStack.top;
+
+    while (current) {
+      this.inputStack.push(current.value);
+      current = current.next;
     }
 
-
-    dequeue() {
-        let current = this.inputStack.top;
-        while (current) {
-            this.outputStack.push(current.value);
-            current = current.next;
-        }
-
-        this.outputStack.pop();
-         this.size--;
-        this.inputStack = new Stack();
-
-        current = this.outputStack.top;
-
-        while (current) {
-            this.inputStack.push(current.value);
-            current = current.next;
-        }
-
-        this.outputStack = new Stack();
-    }
+    this.outputStack = new Stack();
+  }
 
 
 }

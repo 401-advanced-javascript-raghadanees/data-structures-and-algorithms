@@ -1,27 +1,21 @@
 'use strict';
 
-class Node {
-  constructor(value){
-    this.value=value;
-    this.left=null;
-    this.right=null;
-  }
-}
+const Node = require('./node.js');
 
 
 class BinaryTree {
   constructor(){ 
     this.root = null;
   }
-//////////////  ---------- cc 16-------Find the Maximum Value in a Binary Tree
+  //////////////  ---------- cc 16-------Find the Maximum Value in a Binary Tree
   findMaximumValue(){
     if(this.root === null)
-       return null;
+      return null;
     let max = 0;
     findMaxHelper(this.root);
     function findMaxHelper (root){
       if (root.value > max) 
-         max = root.value;
+        max = root.value;
       if(root.left !== null){
         findMaxHelper(root.left);
       }
@@ -29,12 +23,12 @@ class BinaryTree {
       if(root.right !== null){
         findMaxHelper(root.right);
       }
-    }; 
+    } 
     
     return max;
   } 
 
-//////////////  ---------- cc 15
+  //////////////  ---------- cc 15
   preOrder(){
     // /////////////////// root -> left -> right 
     if(this.root == null){
@@ -190,7 +184,7 @@ class BinarySearchTree{
       }
     }
   }//end add
-
+  // ================================================contain 
   contains(value){
     if(typeof value != 'number'){
       return 'the value should be number';
@@ -211,34 +205,34 @@ class BinarySearchTree{
     return false;
   }//end contains 
 }
-let BST = new BinarySearchTree();
-BST.add(10);
-BST.add(15);
-BST.add(5);
-BST.add(50);
-BST.add(3);
-BST.add(7);
-BST.add(12);
-console.log(BST);
-console.log(BST.contains(10));
-console.log( '------' );
-console.log('preOrderBST',BST.preOrderBST());
-console.log( '------' );
-console.log('inOrderBST',BST.inOrderBST());
-console.log( '------' );
-console.log('postOrderBST',BST.postOrderBST());
-console.log( '------' );
-let  BT = new BinaryTree();
-//BT= BST;
-console.log(BT);
-console.log('preOrderBT',BT.preOrder());
-console.log( '------' );
-console.log('inOrderBT',BT.inOrder());
-console.log( '------' );
-console.log('postOrderBT',BT.postOrder());
-console.log( '------' );
+// let BST = new BinarySearchTree();
+// BST.add(10);
+// BST.add(15);
+// BST.add(5);
+// BST.add(50);
+// BST.add(3);
+// BST.add(7);
+// BST.add(12);
+// console.log(BST);
+// console.log(BST.contains(10));
+// console.log( '------' );
+// console.log('preOrderBST',BST.preOrderBST());
+// console.log( '------' );
+// console.log('inOrderBST',BST.inOrderBST());
+// console.log( '------' );
+// console.log('postOrderBST',BST.postOrderBST());
+// console.log( '------' );
+// let  BT = new BinaryTree();
+// //BT= BST;
+// console.log(BT);
+// console.log('preOrderBT',BT.preOrder());
+// console.log( '------' );
+// console.log('inOrderBT',BT.inOrder());
+// console.log( '------' );
+// console.log('postOrderBT',BT.postOrder());
+// console.log( '------' );
 
 
 
 
-module.exports = {BT:BinaryTree, BST:BinarySearchTree , node : Node};
+module.exports = BinarySearchTree, BinaryTree ;

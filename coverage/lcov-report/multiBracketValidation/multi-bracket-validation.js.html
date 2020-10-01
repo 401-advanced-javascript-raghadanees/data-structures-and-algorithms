@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for arrayShift/array-shift.js</title>
+    <title>Code coverage report for multiBracketValidation/multi-bracket-validation.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">arrayShift</a> array-shift.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">multiBracketValidation</a> multi-bracket-validation.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">92.31% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>12/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">86.96% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>20/23</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">90.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
@@ -82,57 +82,60 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
-let insertShiftArray = (arr, val) =&gt; {
-    
-    
-  let mid = Math.ceil(arr.length / 2) - 1;
-  let newArr = [];
-  for (let i = 0; i &lt; arr.length; i++) {
-    if (i &lt; mid) {
-      newArr[i] = arr[i];
-    }
+function multiBracketValidation(string){
+  const arr = [];
 &nbsp;
-    if (i === mid) {
-      newArr[i] = arr[i];
-      newArr[i + 1] = val;
+  for (let i = 0; i &lt; string.length; i++) {
+      
+    if (string[i] === '(' || string[i] === '{' || string[i] === '[') {
+      arr.push(string[i]);
     }
-&nbsp;
-    if (i &gt; mid) {
-      newArr[i + 1] = arr[i];
+    if ((string[i] === ')' &amp;&amp; arr[arr.length - 1] === '(') 
+      || (string[i] === '}' &amp;&amp; arr[arr.length - 1] === '{')
+      || (string[i] === ']' &amp;&amp; arr[arr.length - 1] === '[')) {
+      arr.pop();
+    } else if ((string[i] === ')' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >arr[arr.length - 1] !== '(') </span>
+      || (string[i] === '}' &amp;&amp; arr[arr.length - 1] !== '{')
+      || (string[i] === ']' &amp;&amp; <span class="branch-5 cbranch-no" title="branch not covered" >arr[arr.length - 1] !== '[')</span>) {
+      return false;
     }
   }
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (arr.length === 0) return true;
+<span class="cstat-no" title="statement not covered" >  return false;</span>
+}
 &nbsp;
-  return newArr;
-};
-&nbsp;
-module.exports = insertShiftArray;</pre></td></tr></table></pre>
+// console.log(multiBracketValidation('()[[Extra Characters]]'));
+// console.log(multiBracketValidation('{(})'));
+module.exports = multiBracketValidation;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

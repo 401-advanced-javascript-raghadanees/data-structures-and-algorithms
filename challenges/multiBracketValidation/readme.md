@@ -11,3 +11,4 @@ big O :
 
  solution :
  
+ ![Image](/assets/cc13.jpg)

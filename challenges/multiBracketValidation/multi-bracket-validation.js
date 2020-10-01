@@ -22,6 +22,29 @@ function multiBracketValidation(string){
   return false;
 }
 
+// // stack solution 
+// function multiBracketValidation(input) {
+//   if (input == null) {
+//     return true;
+//   }
+
+//   let stack = new Stack();
+//   for (let i = 0; i < input.length; i++) {
+//     let char = input.charAt(i);
+//     if (char == '(') {
+//       stack.push(')');
+//     }
+//     if (char == '[') {
+//       stack.push(']');
+//     }
+//     if (char == '{') {
+//       stack.push('}');
+//     } else if (char == ')' || char == '}' || char == ']') {
+//       if (stack.isEmpty() || stack.pop() != char) return false;
+//     }
+//   }
+//   return stack.isEmpty();
+
 // console.log(multiBracketValidation('()[[Extra Characters]]'));
 // console.log(multiBracketValidation('{(})'));
 module.exports = multiBracketValidation;

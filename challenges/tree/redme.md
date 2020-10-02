@@ -12,4 +12,7 @@ print the binary tree contain in three method apply BST concept with add and sea
 
 it is efficient to search about number it will reduce the big o for time from o(n) to log (n)
 
+
+breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+
 Solution

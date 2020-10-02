@@ -9,24 +9,30 @@ class Node {
 } 
 
 class BinaryTree {
-    constructor(){ 
-      this.root = null;
-    }
-fizzBuzzTree(root){
+  constructor(){ 
+    this.root = null;
+  }
+  fizzBuzzTree(root){
 
     if (this.root === null) {
-        return 'Empty tree';
+      return 'Empty tree';
     }
-    let newNode = new Node('');
-    if (root.value % 3 === 0)
-        newNode.value += 'Fizz';
-    if (root.value % 5 === 0)
-        newNode.value += 'Buzz';
-    if (newNode.value === '')
-        newNode.value = `${root.value}`;
-    newNode.left = fizzBuzzTree(root.left);
-    newNode.right = fizzBuzzTree(root.right);
-    return newNode;
+    if (root.value % 3 == 0 && root.value % 5 == 0) {
+      root.value = `FizzBuzz`;
+    }
+    else if (root.value % 3 === 0){
+      root.value = 'Fizz';
+    }
+        
+    else if (root.value % 5 === 0){
+      root.value = 'Buzz';
+    }
 
-}
+    if (root.value === '')
+      root.value = `${root.value}`;
+    root.left = fizzBuzzTree(root.left);
+    root.right = fizzBuzzTree(root.right);
+    return root;
+
+  }
 }

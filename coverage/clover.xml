@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1602359271169" clover="3.2.0">
-  <project timestamp="1602359271170" name="All files">
-    <metrics statements="175" coveredstatements="148" conditionals="42" coveredconditionals="26" methods="30" coveredmethods="28" elements="247" coveredelements="202" complexity="0" loc="175" ncloc="175" packages="5" files="6" classes="6"/>
+<coverage generated="1602452086451" clover="3.2.0">
+  <project timestamp="1602452086451" name="All files">
+    <metrics statements="186" coveredstatements="159" conditionals="48" coveredconditionals="32" methods="31" coveredmethods="29" elements="265" coveredelements="220" complexity="0" loc="186" ncloc="186" packages="6" files="7" classes="7"/>
     <package name="arrayShift">
       <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
       <file name="array-shift.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/arrayShift/array-shift.js">
@@ -18,6 +18,23 @@
         <line num="18" count="9" type="cond" truecount="2" falsecount="0"/>
         <line num="19" count="4" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="insertion-sort">
+      <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <file name="insertion-sort.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/insertion-sort/insertion-sort.js">
+        <metrics statements="11" coveredstatements="11" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="3" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="20" type="stmt"/>
+        <line num="7" count="20" type="stmt"/>
+        <line num="8" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="28" type="stmt"/>
+        <line num="10" count="28" type="stmt"/>
+        <line num="12" count="20" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
       </file>
     </package>

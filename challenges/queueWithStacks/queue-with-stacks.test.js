@@ -14,8 +14,8 @@ describe(' PseudoQueue Module ', () => {
     testQ.enqueue(3);
     console.log('testQ enqueue : ', testQ);
     
-     expect([testQ.inputStack.top.value,testQ.inputStack.top.next.value,testQ.inputStack.top.next.next.value]).toEqual([3,2,1]);
- });
+    expect([testQ.inputStack.top.value,testQ.inputStack.top.next.value,testQ.inputStack.top.next.next.value]).toEqual([3,2,1]);
+  });
 
   it('dequeue() ,,,,,,,,,,,, ', () => {
 

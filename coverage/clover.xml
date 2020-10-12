@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1602452086451" clover="3.2.0">
-  <project timestamp="1602452086451" name="All files">
-    <metrics statements="186" coveredstatements="159" conditionals="48" coveredconditionals="32" methods="31" coveredmethods="29" elements="265" coveredelements="220" complexity="0" loc="186" ncloc="186" packages="6" files="7" classes="7"/>
+<coverage generated="1602540329210" clover="3.2.0">
+  <project timestamp="1602540329210" name="All files">
+    <metrics statements="225" coveredstatements="198" conditionals="60" coveredconditionals="43" methods="33" coveredmethods="31" elements="318" coveredelements="272" complexity="0" loc="225" ncloc="225" packages="7" files="8" classes="8"/>
     <package name="arrayShift">
       <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
       <file name="array-shift.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/arrayShift/array-shift.js">
@@ -135,6 +135,51 @@
         <line num="22" count="3" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="mergeSort">
+      <metrics statements="39" coveredstatements="39" conditionals="12" coveredconditionals="11" methods="2" coveredmethods="2"/>
+      <file name="merge-sort.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/mergeSort/merge-sort.js">
+        <metrics statements="39" coveredstatements="39" conditionals="12" coveredconditionals="11" methods="2" coveredmethods="2"/>
+        <line num="4" count="81" type="cond" truecount="3" falsecount="1"/>
+        <line num="6" count="81" type="stmt"/>
+        <line num="7" count="81" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="36" type="stmt"/>
+        <line num="9" count="36" type="stmt"/>
+        <line num="10" count="36" type="stmt"/>
+        <line num="12" count="36" type="stmt"/>
+        <line num="13" count="36" type="stmt"/>
+        <line num="14" count="36" type="stmt"/>
+        <line num="15" count="36" type="stmt"/>
+        <line num="16" count="36" type="stmt"/>
+        <line num="21" count="36" type="stmt"/>
+        <line num="22" count="36" type="stmt"/>
+        <line num="23" count="36" type="stmt"/>
+        <line num="25" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="67" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="33" type="stmt"/>
+        <line num="28" count="33" type="stmt"/>
+        <line num="30" count="34" type="stmt"/>
+        <line num="31" count="34" type="stmt"/>
+        <line num="33" count="67" type="stmt"/>
+        <line num="36" count="36" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="21" type="stmt"/>
+        <line num="38" count="30" type="stmt"/>
+        <line num="39" count="30" type="stmt"/>
+        <line num="42" count="15" type="stmt"/>
+        <line num="43" count="17" type="stmt"/>
+        <line num="44" count="17" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
       </file>
     </package>
     <package name="queueWithStacks">

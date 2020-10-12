@@ -39,4 +39,4 @@ n * (n-1)/2 number of times…concluding the algorithm to be n squared.
 
 •	No additional space is being created. This array is being sorted in place…keeping the space at constant O(1).
 
-![Image](/assets/sorrt26.png)
+![Image](/assets/sort26.png)

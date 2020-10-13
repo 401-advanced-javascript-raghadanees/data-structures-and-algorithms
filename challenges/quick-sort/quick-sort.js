@@ -1,6 +1,7 @@
 'use strict';
 
 function QuickSort(arr, left, right){
+  // left index
   if (left < right){
     // Partition the array by setting the position of the pivot value 
     let position = Partition(arr, left, right);
@@ -38,6 +39,8 @@ function Swap(arr, i, low){
 
 
 // console.log(QuickSort([8,4,23,42,16,15],0,5));
+// console.log(QuickSort([8,4,23,42,16,15,10],0,6));
+
 // console.log(QuickSort([20,18,12,8,5,-2],0,5));
 // console.log(QuickSort([5,12,7,5,5,7],0,5));
 // console.log(QuickSort([2,3,5,7,13,11],0,5));

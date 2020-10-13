@@ -12,7 +12,8 @@ queue-with-stacks| [Link 7](https://github.com/401-advanced-javascript-raghadane
 fifo-animal-shelter | [Link 8](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/fifo-animal-shelter)
 multi-bracket-validation | [Link 9](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/multi-bracket-validation)
 Quick sort | [Link 10](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/pull/21)
-merge sort | [Link 11](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/master/challenges/llZip)
+merge sort | [Link 11](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/merge-sort)
+insertion sort |  [Link 12](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/insertion-sort)
 
 
 

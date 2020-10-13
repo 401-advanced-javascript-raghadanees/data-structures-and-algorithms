@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1602540329210" clover="3.2.0">
-  <project timestamp="1602540329210" name="All files">
-    <metrics statements="225" coveredstatements="198" conditionals="60" coveredconditionals="43" methods="33" coveredmethods="31" elements="318" coveredelements="272" complexity="0" loc="225" ncloc="225" packages="7" files="8" classes="8"/>
+<coverage generated="1602618110643" clover="3.2.0">
+  <project timestamp="1602618110644" name="All files">
+    <metrics statements="242" coveredstatements="215" conditionals="64" coveredconditionals="47" methods="36" coveredmethods="34" elements="342" coveredelements="296" complexity="0" loc="242" ncloc="242" packages="8" files="9" classes="9"/>
     <package name="arrayShift">
       <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
       <file name="array-shift.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/arrayShift/array-shift.js">
@@ -223,6 +223,29 @@
         <line num="81" count="2" type="stmt"/>
         <line num="84" count="1" type="stmt"/>
         <line num="104" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="quick-sort">
+      <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="quick-sort.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/quick-sort/quick-sort.js">
+        <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="4" count="34" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="15" type="stmt"/>
+        <line num="8" count="15" type="stmt"/>
+        <line num="10" count="15" type="stmt"/>
+        <line num="12" count="34" type="stmt"/>
+        <line num="16" count="15" type="stmt"/>
+        <line num="18" count="15" type="stmt"/>
+        <line num="19" count="15" type="stmt"/>
+        <line num="20" count="43" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="26" type="stmt"/>
+        <line num="22" count="26" type="stmt"/>
+        <line num="28" count="15" type="stmt"/>
+        <line num="30" count="15" type="stmt"/>
+        <line num="34" count="41" type="stmt"/>
+        <line num="35" count="41" type="stmt"/>
+        <line num="36" count="41" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
       </file>
     </package>
     <package name="stacksAndQueues">

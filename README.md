@@ -14,6 +14,7 @@ multi-bracket-validation | [Link ](https://github.com/401-advanced-javascript-ra
 insertion sort |  [Link ](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/insertion-sort)
 merge sort | [Link ](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/merge-sort)
 Quick sort | [Link ](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/pull/21)
+Hashtable | [Link ](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/hashtable/challenges/hashtable)
 
 
 

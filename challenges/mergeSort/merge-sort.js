@@ -51,14 +51,14 @@ let x = [8,4,23,42,16,15];
 
 mergeSort(x);
 
-let x1 = [8,4,23,42,16,15];
-let x2 = [20,18,12,8,5,-2];
-let x3 = [5,12,7,5,5,7];
-let x4 = [2,3,5,7,13,11];
-console.log(mergeSort(x1));
-console.log(mergeSort(x2));
-console.log(mergeSort(x3));
-console.log(mergeSort(x4));
+// let x1 = [8,4,23,42,16,15];
+// let x2 = [20,18,12,8,5,-2];
+// let x3 = [5,12,7,5,5,7];
+// let x4 = [2,3,5,7,13,11];
+// console.log(mergeSort(x1));
+// console.log(mergeSort(x2));
+// console.log(mergeSort(x3));
+// console.log(mergeSort(x4));
 
 module.exports = mergeSort;
 

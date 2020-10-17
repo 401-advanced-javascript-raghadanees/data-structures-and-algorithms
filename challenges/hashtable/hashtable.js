@@ -9,8 +9,10 @@ class Hashtable {
 
   hash(key) {
     // I will has my key to get the index of where to store my data.
-    return key.split('').reduce((p, n) => {
-      return p + n.charCodeAt(0);
+    return key.split('').reduce((accumilate, value) => {
+        // console.log('accumilate',accumilate );
+        // console.log('value', value);
+      return accumilate + value.charCodeAt(0);
     }, 0) * 599 % this.size;
 
     // let charArr = key.split('');
@@ -26,9 +28,11 @@ class Hashtable {
     // if the key does not exist in my entries(new Array) then create it and add the new linkedlist to it, and add to the linkedlist
     // if this resulting key existed in the entries then add to it.
     if (!this.entries[hashIndex]) {
+    // console.log('inside if entries,,,,',!this.entries[hashIndex])
       this.entries[hashIndex] = new LinkedList();
     }
     let entry = { [key]: value };
+    console.log('entry,,,,',entry)
     this.entries[hashIndex].append(entry);
   }
 
@@ -90,11 +94,13 @@ class LinkedList {
 
 let newHash = new Hashtable(1024);
 newHash.add('Raghad', 123);
-newHash.add('R', 321);
+// newHash.add('R', 321);
 
-console.log('newHash....', newHash);
-console.log('hash.....', newHash.hash('Raghad'));
-console.log('hash.....', newHash.hash('R'));
+// console.log('*****',newHash.get('Raghads'));
+// console.log('contains*****',newHash.contains('Raghad'));
+// console.log('newHash....', newHash);
+// console.log('hash.....', newHash.hash('Raghad'));
+// console.log('hash.....', newHash.hash('R'));
 
 module.exports = Hashtable;
 

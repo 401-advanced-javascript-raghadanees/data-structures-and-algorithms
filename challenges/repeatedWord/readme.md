@@ -7,5 +7,5 @@ time  >> O(n)
 space >> O(n)
 
 # solution whiteboard
-![Image](/assets/repeated-wordWB.jpg)
+![Image](/assets/repeated-WB.jpg)
 

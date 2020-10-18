@@ -8,4 +8,5 @@ space >> O(n)
 
 # solution whiteboard
 ![Image](/assets/repeated-wordWB.jpg)
+![Image](https://raw.githubusercontent.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/repeated-word/assets/hashTableWB.jpg)
 

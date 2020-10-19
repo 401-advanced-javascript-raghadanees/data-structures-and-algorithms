@@ -10,8 +10,8 @@ class Hashtable {
   hash(key) {
     // I will has my key to get the index of where to store my data.
     return key.split('').reduce((accumilate, value) => {
-        // console.log('accumilate',accumilate );
-        // console.log('value', value);
+      // console.log('accumilate',accumilate );
+      // console.log('value', value);
       return accumilate + value.charCodeAt(0);
     }, 0) * 599 % this.size;
 
@@ -32,7 +32,7 @@ class Hashtable {
       this.entries[hashIndex] = new LinkedList();
     }
     let entry = { [key]: value };
-    console.log('entry,,,,',entry)
+    console.log('entry,,,,',entry);
     this.entries[hashIndex].append(entry);
   }
 

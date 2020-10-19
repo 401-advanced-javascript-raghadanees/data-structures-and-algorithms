@@ -16,9 +16,4 @@ merge sort | [Link ](https://github.com/401-advanced-javascript-raghadanees/data
 Quick sort | [Link ](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/pull/21)
 Hashtable | [Link ](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/hashtable/challenges/hashtable)
 Repeated Word | [Link ](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/repeated-word/challenges/repeatedWord)
-
-
-
-
-
- 
+Tree-Intersection | [link](https://github.com/401-advanced-javascript-raghadanees/data-structures-and-algorithms/tree/tree-intersection/challenges/treeIntersection)

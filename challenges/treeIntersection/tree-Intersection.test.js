@@ -30,17 +30,6 @@ describe('Binary Tree', ()=> {
         tree = new BinaryTree(one);
     });
 
-    // it('preOrder()', ()=> {
-    //     let expected = [1, 2, 6, 7, 8, 9, 3, 4, 5];
-    //     let preOrder = tree.preOrder();
-    //     expect(preOrder).toEqual(expected);
-    // });
-
-    // it('inOrder()', ()=> {
-    //     let expected = [6, 8, 7, 9, 2, 1, 4, 3, 5];
-    //     let inOrder = tree.inOrder();
-    //     expect(inOrder).toEqual(expected);
-    // });
     
     it('postOrder()', ()=> {
         let expected = [8, 9, 7, 6, 2, 4, 5, 3, 1];

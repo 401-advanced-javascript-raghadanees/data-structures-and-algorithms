@@ -113,18 +113,7 @@ myHash.map.forEach( (data, i )=> {
 
 
 
-let myHash1 = new Hashmap(1024);
-myHash1.set('Cat', 'Paghera');
-myHash1.set('C', 'Paghera');
-myHash1.set('Owner' ,'Israa');
-let myHash2 = new Hashmap(1024);
-myHash2.set('Cat', 'Hello');
-myHash2.set('Owner' ,'hi');
-myHash2.set('Owner' ,'hi');
-console.log('myHash1',myHash1);
-console.log('myHash2',myHash2);
-console.log('wqew',myHash2.map[957]);
-console.log('hello',leftJoin(myHash1,myHash2));
+
 
 // obj.repeatedWord=repeatedWord;
 obj.leftJoin=leftJoin;

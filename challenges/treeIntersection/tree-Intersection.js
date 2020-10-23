@@ -1,133 +1,72 @@
 'use strict';
+// const { BinaryTree, Node } = require('../tree/tree.js');
+class Node {
+  constructor(value, left = null, right = null){
+    this.value= value;
+    this.left= left;
+    this.right= right;
+  }
+}
 
-// Time O(n) n is the number of nodes
-// Space O(h) h is the height of the tree
-
-// Binary Search Tree 
-// O(log(n))
-// O(h)
 
 class BinaryTree {
-
-  constructor(root) {
+  constructor(root = null){ 
     this.root = root;
   }
-
-//   // Root - Left - Right
-//   preOrder() {
-//     let results = [];
-
-//     let _walk = (node)=> {
-//       // 1. read TreeNode
-//       results.push(node.value);
-//       // 2. go Left
-//       if(node.left) _walk(node.left);
-//       // 3. go Right
-//       if (node.right) _walk(node.right);
-//     };
-
-//     _walk(this.root);
-//     return results;
-//   }
-
-//   // Left - Root - Right
-//   inOrder() {
-//     let results = [];
-
-//     let _walk = (node) => {
-//       if(node.left) _walk(node.left);
-//       results.push(node.value);
-//       if(node.right) _walk(node.right);
-//     };
-
-//     _walk(this.root);
-
-//     return results;
-//   }
-
-  // Left - Right - Root
-  postOrder() {
-    let results = [];
-
-    let _walk = (node) => {
-      if(node.left) _walk(node.left);
-      if(node.right) _walk(node.right);
-      results.push(node.value);
-    };
-    _walk(this.root);
-    return results;
-  }
-  postOrderObj() {
-    let obj = {};
-    let _walk = (node) => {
-      if(node.left) _walk(node.left);
-      if(node.right) _walk(node.right);
-      obj[node.value] = 1;
-    };
-    _walk(this.root);
-    return obj;
-  }
-}
-   
-function treeIntersection (tree1,tree2){
-  let arr = [];
-  var firstTreeObj =  tree1.postOrderObj();
-  let _walk = (node) => {
-    if(node.left) _walk(node.left);
-    if(node.right) _walk(node.right);
-    if(firstTreeObj[node.value])arr.push(node.value);
-  };
-  _walk(tree2.root);
-  return arr;
 }
 
-const Node = require('./node');
+function treeIntersection(tree1, tree2) {
+  let resultArr = [];
 
-let one = new Node(1);
+  const preOrder = (tree) => {
+    let visited = [];
+    const traverse = (node) => {
+      visited.push(node.value);
+      if (node.left) {
+        traverse(node.left);
+      }
+      if (node.right) { traverse(node.right); }
+    }
+    traverse(tree.root);
+    return visited;
+  }
+  let arr1 = preOrder(tree1);
+  let arr2 = preOrder(tree2);
+
+  arr1.forEach(value => arr2.includes(value) ? resultArr.push(value) : null);
+  return resultArr;
+}
+
+
+let one = new Node(10);
 let two = new Node(2);
 let three = new Node(3);
-let four = new Node(4);
+let four = new Node(14);
 let five = new Node(5);
-let six = new Node(6);
-let seven = new Node(7);
-let eight = new Node(8);
-let nine = new Node(9);
 
-one.left = two;
-one.right = three;
-two.left = six;
-six.right = seven;
-seven.left = eight;
-seven.right = nine;
-three.left = four;
-three.right = five;
-let tree1= new BinaryTree(one);
-console.log('tree.inOrder(1)',tree1.postOrderObj(43543));
-// tree1.preOrder(2);
-// tree1.preOrder(3);
-// tree1.preOrder(4);
-// tree1.preOrder(5);
-// tree1.preOrder(6);
-console.log(tree1);
-
-let one2 = new Node(1);
-let two2 = new Node(2);
-let three2 = new Node(3);
-let four2 = new Node(4);
-let five2 = new Node(5);
-let six2 = new Node(6);
-let seven2 = new Node(7);
+one.right = two;
+one.left = three;
+three.right = four;
+three.left = five;
 
 
-one2.left = two2;
-one2.right = three2;
-two2.left = six2;
-six2.right = seven2;
-// seven2.left = eight2;
-// seven2.right = nine2;
-three2.left = four2;
-three2.right = five2;
-let tree2= new BinaryTree(one2);
-console.log(treeIntersection (tree1,tree2));
 
-module.exports = BinaryTree;
+let one2 = new Node(10);
+let two2 = new Node(22);
+let three2 = new Node(34);
+let four2 = new Node(14);
+let five2 = new Node(51);
+
+one2.right = two2;
+one2.left = three2;
+three2.right = four2;
+three2.left = five2;
+
+let tree1Obj = new BinaryTree(one);
+let tree2Obj = new BinaryTree(one2);
+
+console.log('treeIntersection****', treeIntersection(tree1Obj, tree2Obj));
+
+module.exports = { treeIntersection }
+
+//  node challenges/treeIntersection/tree-Intersection.js

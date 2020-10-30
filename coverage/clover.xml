@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1603230446171" clover="3.2.0">
-  <project timestamp="1603230446172" name="All files">
-    <metrics statements="372" coveredstatements="323" conditionals="102" coveredconditionals="74" methods="65" coveredmethods="60" elements="539" coveredelements="457" complexity="0" loc="372" ncloc="372" packages="11" files="13" classes="13"/>
+<coverage generated="1604086760408" clover="3.2.0">
+  <project timestamp="1604086760409" name="All files">
+    <metrics statements="385" coveredstatements="336" conditionals="104" coveredconditionals="76" methods="67" coveredmethods="62" elements="556" coveredelements="474" complexity="0" loc="385" ncloc="385" packages="12" files="14" classes="14"/>
     <package name="arrayShift">
       <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
       <file name="array-shift.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/arrayShift/array-shift.js">
@@ -75,6 +75,25 @@
         <line num="12" count="20" type="stmt"/>
         <line num="14" count="4" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="leftJoin">
+      <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="left-join.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/leftJoin/left-join.js">
+        <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="14" type="stmt"/>
+        <line num="9" count="14" type="stmt"/>
+        <line num="10" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="17" count="14" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
       </file>
     </package>
     <package name="linkedList">

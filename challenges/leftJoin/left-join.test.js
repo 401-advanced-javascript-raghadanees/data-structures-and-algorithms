@@ -1,24 +1,54 @@
-// 'use strict';
 
-// const obj = require('./left-join');
+'use strict';
 
-// let myHash1 = new obj.Hashmap(1024);
-// myHash1.set('kk', 'LLL');
-// myHash1.set('C', 'LLL');
-// myHash1.set('MMM' ,'person');
+const leftJoin = require ('./left-join');
 
-// let myHash2 = new obj.Hashmap(1024);
-// myHash2.set('kk', 'Hello');
-// myHash2.set('MMM' ,'hi');
-// myHash2.set('MMM' ,'hi');
+let obj1 = {
+  'fond': 'enamored',
+  'wrath': 'anger',
+  'diligent': 'employed',
+  'outfit': 'garb',
+  'guide': 'usher',
+};
 
-// describe('hashtable get()/contain()', ()=> {
+let obj2 = {
+  'fond': 'averse',
+  'wrath': 'delight',
+  'diligent': 'idle',
+  'guide': 'follow',
+  'flow': 'jam',
+};
 
-//   it('get(key) in the hash map', ()=> {
-//     expect(obj.combine(myHash1,myHash2)).toEqual([
-//       [ 'C', 'LLL', null ],
-//       [ 'kk', 'LLL', 'Hello' ],
-//       [ 'MMM', 'person', 'hi', 'hi' ],
-//     ]);
-//   });
-// });
+let obj3 = {
+  'fond': 'averse',
+  'wrath': 'delight',
+  'diligent': 'idle',
+  'guide': 'follow',
+  'flow': 'jam',
+  'stuff': 'empty',
+  'soft': 'hard',
+};
+
+it('should perform a left join when two objects are provided', () => {
+  expect(leftJoin(obj1,obj2)).toStrictEqual(
+    [
+      [ 'fond', 'enamored', 'averse' ],
+      [ 'wrath', 'anger', 'delight' ],
+      [ 'diligent', 'employed', 'idle' ],
+      [ 'outfit', 'garb', null ],
+      [ 'guide', 'usher', 'follow' ] ,
+    ]);
+});
+
+it('should perform a left join when the first obj contains more key value pairs than the second obj provided', () => {
+  expect(leftJoin(obj3, obj1)).toStrictEqual(
+    [ 
+      [ 'fond', 'averse', 'enamored' ],
+      [ 'wrath', 'delight', 'anger' ],
+      [ 'diligent', 'idle', 'employed' ],
+      [ 'guide', 'follow', 'usher' ],
+      [ 'flow', 'jam', null ],
+      [ 'stuff', 'empty', null ],
+      [ 'soft', 'hard', null ], 
+    ]);
+});

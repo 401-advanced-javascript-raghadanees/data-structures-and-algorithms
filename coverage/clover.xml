@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1603481043106" clover="3.2.0">
-  <project timestamp="1603481043106" name="All files">
-    <metrics statements="413" coveredstatements="363" conditionals="111" coveredconditionals="82" methods="76" coveredmethods="68" elements="600" coveredelements="513" complexity="0" loc="413" ncloc="413" packages="12" files="14" classes="14"/>
+<coverage generated="1604089894212" clover="3.2.0">
+  <project timestamp="1604089894212" name="All files">
+    <metrics statements="433" coveredstatements="369" conditionals="119" coveredconditionals="84" methods="78" coveredmethods="70" elements="630" coveredelements="523" complexity="0" loc="433" ncloc="433" packages="13" files="15" classes="15"/>
     <package name="arrayShift">
       <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
       <file name="array-shift.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/arrayShift/array-shift.js">
@@ -21,51 +21,77 @@
         <line num="26" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="breadthFirstGraph">
+      <metrics statements="20" coveredstatements="6" conditionals="8" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="breadth-first.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/breadthFirstGraph/breadth-first.js">
+        <metrics statements="20" coveredstatements="6" conditionals="8" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="14" count="2" type="cond" truecount="2" falsecount="2"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="graph">
       <metrics statements="41" coveredstatements="40" conditionals="9" coveredconditionals="8" methods="11" coveredmethods="8"/>
       <file name="graph.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/graph/graph.js">
         <metrics statements="41" coveredstatements="40" conditionals="9" coveredconditionals="8" methods="11" coveredmethods="8"/>
-        <line num="3" count="11" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="28" count="10" type="stmt"/>
-        <line num="32" count="10" type="cond" truecount="4" falsecount="0"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="39" count="8" type="stmt"/>
-        <line num="41" count="8" type="stmt"/>
+        <line num="3" count="17" type="stmt"/>
+        <line num="9" count="15" type="stmt"/>
+        <line num="10" count="15" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="28" count="22" type="stmt"/>
+        <line num="32" count="25" type="cond" truecount="4" falsecount="0"/>
+        <line num="33" count="10" type="stmt"/>
+        <line num="39" count="15" type="stmt"/>
+        <line num="41" count="15" type="stmt"/>
         <line num="47" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="48" count="0" type="stmt"/>
         <line num="50" count="1" type="stmt"/>
-        <line num="55" count="2" type="stmt"/>
-        <line num="56" count="2" type="stmt"/>
-        <line num="57" count="2" type="stmt"/>
-        <line num="58" count="2" type="stmt"/>
+        <line num="55" count="3" type="stmt"/>
+        <line num="56" count="3" type="stmt"/>
+        <line num="57" count="3" type="stmt"/>
+        <line num="58" count="3" type="stmt"/>
         <line num="62" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="63" count="2" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="84" count="1" type="stmt"/>
-        <line num="86" count="1" type="stmt"/>
-        <line num="87" count="1" type="stmt"/>
-        <line num="88" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
-        <line num="90" count="1" type="stmt"/>
-        <line num="91" count="1" type="stmt"/>
-        <line num="93" count="1" type="stmt"/>
-        <line num="94" count="1" type="stmt"/>
-        <line num="95" count="1" type="stmt"/>
-        <line num="96" count="1" type="stmt"/>
-        <line num="97" count="1" type="stmt"/>
-        <line num="98" count="1" type="stmt"/>
-        <line num="100" count="1" type="stmt"/>
-        <line num="101" count="1" type="stmt"/>
-        <line num="102" count="1" type="stmt"/>
-        <line num="103" count="1" type="stmt"/>
-        <line num="104" count="1" type="stmt"/>
-        <line num="105" count="1" type="stmt"/>
-        <line num="106" count="1" type="stmt"/>
-        <line num="108" count="1" type="stmt"/>
-        <line num="110" count="1" type="stmt"/>
+        <line num="84" count="2" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
+        <line num="87" count="2" type="stmt"/>
+        <line num="88" count="2" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
+        <line num="90" count="2" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
+        <line num="93" count="2" type="stmt"/>
+        <line num="94" count="2" type="stmt"/>
+        <line num="95" count="2" type="stmt"/>
+        <line num="96" count="2" type="stmt"/>
+        <line num="97" count="2" type="stmt"/>
+        <line num="98" count="2" type="stmt"/>
+        <line num="100" count="2" type="stmt"/>
+        <line num="101" count="2" type="stmt"/>
+        <line num="102" count="2" type="stmt"/>
+        <line num="103" count="2" type="stmt"/>
+        <line num="104" count="2" type="stmt"/>
+        <line num="105" count="2" type="stmt"/>
+        <line num="106" count="2" type="stmt"/>
+        <line num="108" count="2" type="stmt"/>
+        <line num="110" count="2" type="stmt"/>
       </file>
     </package>
     <package name="hashtable">
@@ -377,8 +403,8 @@
       <metrics statements="41" coveredstatements="37" conditionals="10" coveredconditionals="6" methods="11" coveredmethods="11"/>
       <file name="stacks-and-queues.js" path="/home/raghadan/ltuc/401/data-structures-and-algorithms/challenges/stacksAndQueues/stacks-and-queues.js">
         <metrics statements="41" coveredstatements="37" conditionals="10" coveredconditionals="6" methods="11" coveredmethods="11"/>
-        <line num="5" count="15" type="stmt"/>
-        <line num="6" count="15" type="stmt"/>
+        <line num="5" count="21" type="stmt"/>
+        <line num="6" count="21" type="stmt"/>
         <line num="12" count="6" type="stmt"/>
         <line num="13" count="6" type="stmt"/>
         <line num="18" count="8" type="stmt"/>
@@ -417,7 +443,7 @@
         <line num="105" count="0" type="stmt"/>
         <line num="108" count="4" type="stmt"/>
         <line num="114" count="2" type="stmt"/>
-        <line num="135" count="1" type="stmt"/>
+        <line num="135" count="2" type="stmt"/>
       </file>
     </package>
     <package name="treeIntersection">

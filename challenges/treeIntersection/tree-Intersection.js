@@ -1,72 +1,39 @@
 'use strict';
-// const { BinaryTree, Node } = require('../tree/tree.js');
-class Node {
-  constructor(value, left = null, right = null){
-    this.value= value;
-    this.left= left;
-    this.right= right;
-  }
-}
+const { BinaryTree, Node } = require('../tree/tree');
 
-
-class BinaryTree {
-  constructor(root = null){ 
-    this.root = root;
-  }
-}
-
-function treeIntersection(tree1, tree2) {
-  let resultArr = [];
-
-  const preOrder = (tree) => {
-    let visited = [];
-    const traverse = (node) => {
-      visited.push(node.value);
-      if (node.left) {
-        traverse(node.left);
-      }
-      if (node.right) { traverse(node.right); }
+function tree_intersection(tree1, tree2) {
+  let array = [];
+  let tree1Arr = tree1.preOrder();
+  let tree2Arr = tree2.preOrder();
+  tree1Arr.forEach((item) => {
+    console.log('item', item);
+    if (tree2Arr.includes(item)) {
+      array.push(item);
     }
-    traverse(tree.root);
-    return visited;
-  }
-  let arr1 = preOrder(tree1);
-  let arr2 = preOrder(tree2);
-
-  arr1.forEach(value => arr2.includes(value) ? resultArr.push(value) : null);
-  return resultArr;
+  });
+  return array;
 }
 
-
-let one = new Node(10);
-let two = new Node(2);
-let three = new Node(3);
-let four = new Node(14);
-let five = new Node(5);
-
-one.right = two;
-one.left = three;
-three.right = four;
-three.left = five;
-
-
-
-let one2 = new Node(10);
-let two2 = new Node(22);
-let three2 = new Node(34);
-let four2 = new Node(14);
-let five2 = new Node(51);
-
-one2.right = two2;
-one2.left = three2;
-three2.right = four2;
-three2.left = five2;
-
-let tree1Obj = new BinaryTree(one);
-let tree2Obj = new BinaryTree(one2);
-
-console.log('treeIntersection****', treeIntersection(tree1Obj, tree2Obj));
-
-module.exports = { treeIntersection }
-
-//  node challenges/treeIntersection/tree-Intersection.js
+let node1 = new Node(10);
+let node2 = new Node(2);
+let node3 = new Node(3);
+let node4 = new Node(14);
+let node5 = new Node(5);
+node1.right = node2;
+node1.left = node3;
+node3.right = node4;
+node3.left = node5;
+let node01 = new Node(10);
+let node02 = new Node(22);
+let node03 = new Node(34);
+let node04 = new Node(14);
+let node05 = new Node(51);
+node01.right = node02;
+node01.left = node03;
+node03.right = node04;
+node03.left = node05;
+let binaryTreeObj = new BinaryTree(node1);
+let binaryTreeObj2 = new BinaryTree(node01);
+console.log('preOrder : >', binaryTreeObj.preOrder());
+console.log('****', tree_intersection(binaryTreeObj, binaryTreeObj2));
+module.exports = { tree_intersection };

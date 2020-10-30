@@ -1,270 +1,127 @@
 'use strict';
-
 class Node {
-  constructor(value){
-    this.value=value;
-    this.left=null;
-    this.right=null;
+  constructor(value, left = null, right = null) {
+    this.value = value;
+    this.left = left;
+    this.right = right;
   }
 }
-
-
 class BinaryTree {
-  constructor(){ 
-    this.root = null;
+  constructor(root = null) {
+    this.root = root;
   }
-  //////////////  ---------- cc 17-------takes a Binary Tree as its unique input...traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
-  BreadthFirstTraversal() {
-    if(this.root === null){
-      return 'Empty tree';
-    }
-    let visited = [];// list of visited nodes
-    let  queue = [];//a basic queue for keeping track of which nodes we need to look at .
-    let currentNode = this.root;
-
-    queue.push(currentNode);
-
-    while (queue.length>0) {
-      //console.log('queue.length:',queue.length);
-      currentNode = queue.shift();
-      visited.push(currentNode.value);
-      //console.log('currentNode node:',currentNode.value);
-      //console.log('visetedNodevalue:',visited);
-      if (currentNode.left) 
-        queue.push(currentNode.left);
-      if (currentNode.right) 
-        queue.push(currentNode.right);
-    }
-
-    return visited;
-  } 
-
-  //////////////  ---------- cc 16-------Find the Maximum Value in a Binary Tree
-  findMaximumValue(){
-    if(this.root === null)
-      return null;
-    let max = 0;
-    findMaxHelper(this.root);
-    function findMaxHelper (root){
-      if (root.value > max) 
-        max = root.value;
-      if(root.left !== null){
-        findMaxHelper(root.left);
-      }
-
-      if(root.right !== null){
-        findMaxHelper(root.right);
-      }
-    } 
-    
-    return max;
-  } 
-
-  //////////////  ---------- cc 15
-  preOrder(){
-    // /////////////////// root -> left -> right 
-    if(this.root == null){
-      return 'Empty tree !!!';
-    }
-    let  root = this.root;
-    let visited = [];
-    function traversalPreOrder(node){
-      visited.push(node.value);
-      if(node.left){
-        traversalPreOrder(node.left);
-      }
-      if(node.right){
-        traversalPreOrder(node.right);
-      }
-    }
-    traversalPreOrder(root);
-    return visited;
+  // Root - Left - right
+  preOrder() {
+    let output = [];
+    let _traverse = (node) => {
+      output.push(node.value);
+      if (node.left) { _traverse(node.left);   }
+      if (node.right) {  _traverse(node.right); }
+    };
+    _traverse(this.root);
+    return output;
   }
-  
-  inOrder(){
-    ///////////////////// left - root - right  
-    if(this.root == null){
-      return 'Empty tree';
-    }
-    let  root = this.root;
-    let visited = [];
-    function traversalInOrder(node){
-      if(node.left){
-        traversalInOrder(node.left);
-      }
-      visited.push(node.value);
-      if(node.right){
-        traversalInOrder(node.right);
-      }
-    }
-    traversalInOrder(root);
-    return visited;
+  // Left - Root - Right
+  inOrder() {
+    let output = [];
+    let _traverse = (node) => {
+      if (node.left) _traverse(node.left);
+      output.push(node.value);
+      if (node.right) _traverse(node.right);
+    };
+    _traverse(this.root);
+    return output;
   }
-
-  postOrder(){
-    // left - right - node  
-    if(this.root == null){
-      return 'Empty tree';
-    }
-    let  root = this.root;
-    let visited = [];
-    function traversalPostOrder(node){
-      if(node.left){
-        traversalPostOrder(node.left);
-      }
-      if(node.right){
-        traversalPostOrder(node.right);
-      }
-      visited.push(node.value);
-    }
-    traversalPostOrder(root);
-    return visited;
+  // Left - Right - Root
+  postOrder() {
+    let output = [];
+    let _traverse = (node) => {
+      if (node.left) _traverse(node.left);
+      if (node.right) _traverse(node.right);
+      output.push(node.value);
+    };
+    _traverse(this.root);
+    return output;
   }
 }
-//----------------------------------------------
-
-class BinarySearchTree{
-  constructor(){
-    this.root=null;
+let node1 = new Node(1);
+let node2 = new Node(2);
+let node3 = new Node(3);
+let node4 = new Node(4);
+let node5 = new Node(5);
+node1.right = node2;
+node1.left = node3;
+node3.right = node4;
+node3.left = node5;
+let binaryTreeObj = new BinaryTree(node1);
+console.log('preOrder : >', binaryTreeObj.preOrder());
+console.log('inOrder : >', binaryTreeObj.inOrder());
+console.log('post : >', binaryTreeObj.postOrder());
+class BinarySearchTree {
+  constructor(root = null) {
+    this.root = root;
   }
-  
-  preOrderBST(){
-    // root - left - right 
-    if(this.root == null){
-      return 'Empty tree';
-    }
-    let  root = this.root;
-    let visited = [];
-    function traversal(node){
-      visited.push(node.value);
-      if(node.left){
-        traversal(node.left);
-      }
-      if(node.right){
-        traversal(node.right);
-      }
-    }//end traversal function
-    traversal(root);
-    return visited;
-  }
-  inOrderBST(){
-    // left - root - right  
-    if(this.root == null){
-      return 'Empty tree';
-    }
-    let  root = this.root;
-    let visited = [];
-    function traversal(node){
-      if(node.left){
-        traversal(node.left);
-      }
-      visited.push(node.value);
-      if(node.right){
-        traversal(node.right);
-      }
-    }
-    traversal(root);
-    return visited;
-  }//end inOrderBST
-  postOrderBST(){
-    // left - right - node  
-    if(this.root == null){
-      return 'Empty tree !!!';
-    }
-    let  root = this.root;
-    let visited = [];
-    function traversal(node){
-      if(node.left){
-        traversal(node.left);
-      }
-      if(node.right){
-        traversal(node.right);
-      }
-      visited.push(node.value);
-    }
-    traversal(root);
-    return visited;
-  }
-  add(value){
-    if(typeof value != 'number'){
-      return 'the value should be number';
-    }
-    if(this.root == null){
+  add(value) {
+    // if the tree is empty will assign the new node to the root 
+    if (this.root == null) {
       this.root = new Node(value);
-      return this;
+      return;
     }
-
-    return  traversal(this.root);
-
-    function traversal(node){
-      if(value<node.value){
-        if(node.left == null){
-          node.left = new Node(value);
-          return this;
-        }else {
-          return traversal(node.left);
-        }
-      }else if(value>node.value){
-        if(node.right == null){
-          node.right = new Node(value);
-          return this;
-        }else {
-          return traversal(node.right);
-        }
-      }else {
-        return 'this node is  exist';
+    // else if not empty go the method addNode 
+    this.addNode(value, this.root);
+  }
+  addNode(value, node) {
+    if (value > node.value) { // if the new value grater than node go to right
+      if (node.right == null) { // if doesn't have a right assign the new value the right node
+        node.right = new Node(value);
+        return;
+      } else { // if there is a right node , will do the recursion addnode 
+        this.addNode(value, node.right);
+        return;
       }
     }
-  }//end add
-
-  contains(value){
-    if(typeof value != 'number'){
-      return 'the value should be number';
-    }
-    if(this.root == null ){
-      return 'Empty tree';
-    }
-    let node = this.root;
-    while(node != null){
-      if(value == node.value){
-        return true;
-      }else if(value< node.value){
-        node=node.left;
-      } else  if(value> node.value){
-        node = node.right;
+    if (value <= node.value) { // if the new value less than node go to left 
+      if (node.left == null) { // if doesn't have a left assign the new value to the left node 
+        node.left = new Node(value);
+        return;
+      } else {
+        this.addNode(value, node.left);
+        return;
       }
     }
-    return false;
-  }//end contains 
+  }
+  /**
+ * to see if the value found in the tree or not 
+ * @param {*} value 
+ */
+  contains(value) {
+    return this.containsNode(value, this.root);
+  }
+  containsNode(value, node) {
+    if (node == null) {
+      return false;
+    }
+    if (node.value == value) {
+      return true;
+    } else if (node.value < value) {
+      return this.containsNode(value, node.right);
+    } else if (node.value >= value) {
+      return this.containsNode(value, node.left);
+    }
+  }
 }
 let BST = new BinarySearchTree();
-BST.add(10);
-BST.add(15);
-BST.add(5);
-BST.add(50);
+BST.add(1);
+BST.add(2);
 BST.add(3);
-BST.add(7);
-BST.add(12);
-console.log(BST);
-console.log(BST.contains(10));
-console.log( '------' );
-console.log('preOrderBST',BST.preOrderBST());
-console.log( '------' );
-console.log('inOrderBST',BST.inOrderBST());
-console.log( '------' );
-console.log('postOrderBST',BST.postOrderBST());
-console.log( '------' );
-let  BT = new BinaryTree();
-//BT= BST;
-console.log(BT);
-console.log('preOrderBT',BT.preOrder());
-console.log( '------' );
-console.log('inOrderBT',BT.inOrder());
-console.log( '------' );
-console.log('postOrderBT',BT.postOrder());
-console.log( '------' );
-
-
-
-
-module.exports = {BT:BinaryTree, BST:BinarySearchTree , node : Node};
+BST.add(4);
+BST.add(5);
+// BST.contains(5);
+console.log('contaaaains', BST.contains(10));
+console.log('addd', BST);
+// console.log('vvv',BST.root.value);
+// console.log('rrrrrr',BST.root.right);
+// console.log('lllllll',BST.root.right.right.value);
+// console.log('*****',BST.root.right.right.right.value);
+// console.log('*****',BST.root.right.right.right.right.value);
+module.exports = { Node, BinaryTree, BinarySearchTree };

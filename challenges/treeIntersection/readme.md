@@ -8,4 +8,9 @@ keep the time complexity under O(log(n)).
 
 ### solution 
 
-![Image](/assets/cc32.jpg)
+### BigO:
+- Time: 
+- Space:
+
+### WhiteBoard
+![Image](/assets/treeIntersection.jpg)

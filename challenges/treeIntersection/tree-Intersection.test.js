@@ -1,64 +1,32 @@
 'use strict';
 
-const {Node , BinaryTree, treeIntersection} = require('./tree-Intersection');
-
-describe('Binary Tree', ()=> {
-
-    let tree1 = null;
-
-    beforeAll(() => {
-        let one = new Node(12);
-        let two = new Node(9);
-        let three = new Node(16);
-        let four = new Node(14);
-        let five = new Node(17);
-        let six = new Node(4);
-        let seven = new Node(6);
-        let eight = new Node(5);
-        let nine = new Node(7);
-    
-        one.left = two;
-        one.right = three;
-        two.left = six;
-        six.right = seven;
-        seven.left = eight;
-        seven.right = nine;
-        three.left = four;
-        three.right = five;
-    
-        tree1 = new BinaryTree(one);
-      });
-    
-    
-      let tree2 = null;
-    
-      beforeAll(() => {
-        let one = new Node(5);
-        let two = new Node(9);
-        let three = new Node(16);
-        let four = new Node(33);
-        let five = new Node(17);
-        let six = new Node(4);
-        let seven = new Node(156);
-        let eight = new Node(5);
-        let nine = new Node(7);
-    
-        one.left = two;
-        one.right = three;
-        two.left = six;
-        six.right = seven;
-        seven.left = eight;
-        seven.right = nine;
-        three.left = four;
-        three.right = five;
-    
-        tree2 = new BinaryTree(one);
-      });
-    // Root - Left - Right
-    it('treeIntersection()', ()=> {
-        let expected = [9, 4, 5, 7,16, 17];
-        let treeIntersec = treeIntersection(tree1,tree2)
-        expect(treeIntersec).toEqual(expected);
-    });
-
+const { Node, BinaryTree } = require('../tree/tree');
+const { tree_intersection } = require('./tree-Intersection');
+describe('Binary Tree', () => {
+  let node1 = new Node(10);
+  let node2 = new Node(2);
+  let node3 = new Node(3);
+  let node4 = new Node(14);
+  let node5 = new Node(5);
+  node1.right = node2;
+  node1.left = node3;
+  node3.right = node4;
+  node3.left = node5;
+  let node01 = new Node(10);
+  let node02 = new Node(22);
+  let node03 = new Node(34);
+  let node04 = new Node(14);
+  let node05 = new Node(51);
+  node01.right = node02;
+  node01.left = node03;
+  node03.right = node04;
+  node03.left = node05;
+  let binaryTreeObj = new BinaryTree(node1);
+  let binaryTreeObj2 = new BinaryTree(node01);
+  // Root - Left - Right
+  it('treeIntersection()', () => {
+    let expected = [10,14];
+    let treeIntersection = tree_intersection(binaryTreeObj, binaryTreeObj2);
+    expect(treeIntersection).toEqual(expected);
+  });
 });
